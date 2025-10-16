@@ -1,0 +1,67 @@
+#Output: 2025-10-13 at 15:30:58
+
+year = 2025
+month = 10
+day = 13
+hour = 15
+minute = 30
+second = 58
+
+print(year, month, day, sep = "-", end = " at ") #the end operator replaces the default "\n"
+print(hour, minute, second, sep = ":")
+
+#Concatenation and repetition
+My_Sequence = "AAAA"
+Another_Sequence = "GGGG"
+
+print(My_Sequence * 10) #repeat sequence 10 times
+print(My_Sequence + Another_Sequence) #adds sequences together "AGCGCGAA"
+
+print(My_Sequence + Another_Sequence * 10)
+#This seems to multiply the second sequence first before adding the first
+#Trying with brackets
+
+print((My_Sequence + Another_Sequence) * 10)
+#The sequences get added first, then multiplied, so brackets can change priorities
+#Python seems to follow the "BODMAS" rule with operators
+
+#Shopping example
+#I bought 3 items: oat milk, cat food and kiwis
+
+#Defining quantities I bought
+OatMilk_quantity = 2
+CatFood_quantity = 6
+kiwi_quantity = 4
+
+#Defnining price for each, not necessarily realistic
+OatMilk_price = 2.9
+CatFood_price = 50.20
+kiwi_price = 5
+
+#defining total number of items I bought
+quantity_total = OatMilk_quantity + CatFood_quantity + kiwi_quantity
+
+#calculating total cost
+price_total = (OatMilk_price * OatMilk_quantity) + (CatFood_price * CatFood_quantity) + (kiwi_price * kiwi_quantity)
+
+#fstring
+print(f"Today I bought {OatMilk_quantity} bottles of oat milk, {CatFood_quantity} cans of cat food and {kiwi_quantity} kiwis. This means I bought a total of", quantity_total, "items.", f"I spent a total of {price_total:.2f}", "euros",
+      f"the average price of items I bought is {price_total/3:.2f}")
+
+#(I'm not sure where I can add a line break without messing up the code)
+#That's why its an ugly long string, sorry
+
+#Defining different discounts
+highdiscount = 1 - 0.15
+mediumdiscount = 1 - 0.10
+lowdiscount = 1 - 0.05
+nodiscount = 1 - 0
+
+#using low discount as example
+price_total_after_discount = price_total * lowdiscount
+
+print(f"Before the discount, your total was {price_total:.2f}.",
+      f"Your new total is {price_total_after_discount:.2f}",
+      f"You have saved {price_total - price_total_after_discount:.2f} euros today!")
+
+#tried with different prices and discounts, seems to work
