@@ -1,0 +1,31 @@
+import random
+adjectives = ["coolest", "smelliest", "hungriest", "most amazing",
+               "most confusing", " most hilarious"]
+nouns = ["human", "bear", "caterpillar", "sloth",
+          "noodle soup", "koala"]
+places = ["Vienna", "Döbling", "this apartment", "this room",
+          "Austria", "the whole world"]
+
+adjective = random.choice(adjectives)
+noun = random.choice(nouns)
+place = random.choice(places)
+
+#print("You are the", adjective, noun, "in", place)
+
+#Homework - four praising messages, all different
+for i in range(4): #4 praises
+
+    adjective = random.choice(adjectives) #remove used
+    adjectives.remove(adjective)
+
+    noun = nouns.pop(nouns.index(random.choice(nouns))) #index used
+    #chooses random list element, finds index and deletes it
+
+    randomint = random.randint(0, (len(places)-1)) #we want 0,5 thats why -1
+    place = places.pop(randomint) #randint used
+
+    print("You are the", adjective, noun, "in", place)
+
+#optional input exercise
+name = input("Please enter your name: ")
+print("Hello", name, "you are the", adjective, noun, "in", place)
